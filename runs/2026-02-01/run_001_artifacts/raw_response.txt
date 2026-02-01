@@ -1,0 +1,16 @@
+{
+  "life_stage": "单身青年",
+  "risk_level": "C3",
+  "need": "增值",
+  "weights": {
+    "w_cash": 5,
+    "w_bond": 45,
+    "w_equity": 40,
+    "w_commodity": 10
+  },
+  "self_check": {
+    "sum_100": true,
+    "bounds_ok": true
+  },
+  "notes": "权重由现金下限、风险资产上限和波动率约束共同驱动，波动率控制在20%以内"
+}

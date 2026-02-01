@@ -1,0 +1,13 @@
+{
+  "params": {
+    "life_stage": "退休",
+    "risk_level": "C1",
+    "need": "保值"
+  },
+  "constraints": {
+    "cash_min": 20,
+    "sigma_cap": 0.04,
+    "risk_asset_max": 12
+  },
+  "message": "请生成资产配置权重。"
+}

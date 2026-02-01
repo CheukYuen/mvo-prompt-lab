@@ -1,0 +1,18 @@
+prompts:
+  allocation_test:
+    current: v001
+    versions:
+      v001:
+        file: allocation_test.v001.md
+        description: "Initial V3 rules-based allocation prompt"
+        created: "2025-01-15"
+        variables:
+          - life_stage
+          - risk_level
+          - need
+          - cash_min
+          - sigma_cap
+          - risk_asset_max
+          - sigma_ann_matrix
+          - corr_matrix
+          - asset_order

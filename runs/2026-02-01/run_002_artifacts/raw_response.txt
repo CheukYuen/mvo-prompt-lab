@@ -1,0 +1,16 @@
+{
+  "life_stage": "退休",
+  "risk_level": "C1",
+  "need": "保值",
+  "weights": {
+    "w_cash": 20,
+    "w_bond": 88,
+    "w_equity": 6,
+    "w_commodity": 6
+  },
+  "self_check": {
+    "sum_100": true,
+    "bounds_ok": true
+  },
+  "notes": "权重由现金下限、风险资产上限和波动率约束共同驱动，组合年化波动率经计算为0.0398，满足<=0.04要求"
+}
