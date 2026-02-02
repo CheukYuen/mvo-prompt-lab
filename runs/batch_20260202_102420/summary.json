@@ -1,0 +1,96 @@
+{
+  "summary": {
+    "total_cases": 105,
+    "pass_rate": 0.0,
+    "status_breakdown": {
+      "pending": 105,
+      "success": 0
+    }
+  },
+  "deviation_statistics": {},
+  "breakdown": {
+    "by_life_stage": {
+      "刚毕业": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "单身青年": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "二人世界": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "小孩学前": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "小孩成年前": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "子女成年": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "退休": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      }
+    },
+    "by_risk_level": {
+      "C1": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "C2": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "C3": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "C4": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "C5": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      }
+    },
+    "by_need": {
+      "保值": {
+        "total": 35,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "增值": {
+        "total": 35,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "传承": {
+        "total": 35,
+        "pass": 0,
+        "avg_diff": null
+      }
+    }
+  },
+  "failed_cases": [],
+  "timestamp": "2026-02-02T10:24:20.303583"
+}
