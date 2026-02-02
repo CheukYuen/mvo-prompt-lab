@@ -1,0 +1,16 @@
+{
+  "life_stage": "退休",
+  "risk_level": "C3",
+  "need": "保值",
+  "weights": {
+    "w_cash": 20,
+    "w_bond": 79,
+    "w_equity": 1,
+    "w_commodity": 0
+  },
+  "self_check": {
+    "sum_100": true,
+    "bounds_ok": true
+  },
+  "notes": "权重由现金下限20%和风险资产上限21%驱动，组合波动率控制在8%以内"
+}

@@ -1,0 +1,16 @@
+{
+  "life_stage": "刚毕业",
+  "risk_level": "C5",
+  "need": "增值",
+  "weights": {
+    "w_cash": 10,
+    "w_bond": 5,
+    "w_equity": 80,
+    "w_commodity": 5
+  },
+  "self_check": {
+    "sum_100": true,
+    "bounds_ok": true
+  },
+  "notes": "权重由现金下限、风险资产上限和波动率约束共同驱动，年化波动率控制在27%以内"
+}

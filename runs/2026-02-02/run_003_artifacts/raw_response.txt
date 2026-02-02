@@ -1,0 +1,16 @@
+{
+  "life_stage": "二人世界",
+  "risk_level": "C3",
+  "need": "增值",
+  "weights": {
+    "w_cash": 10,
+    "w_bond": 45,
+    "w_equity": 35,
+    "w_commodity": 10
+  },
+  "self_check": {
+    "sum_100": true,
+    "bounds_ok": true
+  },
+  "notes": "权重由现金下限、风险资产上限和波动率约束共同驱动，组合年化波动率约为0.178，满足所有硬约束。"
+}

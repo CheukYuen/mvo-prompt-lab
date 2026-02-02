@@ -1,0 +1,16 @@
+{
+  "life_stage": "小孩成年前",
+  "risk_level": "C2",
+  "need": "保值",
+  "weights": {
+    "w_cash": 15,
+    "w_bond": 72,
+    "w_equity": 10,
+    "w_commodity": 3
+  },
+  "self_check": {
+    "sum_100": true,
+    "bounds_ok": true
+  },
+  "notes": "权重由现金下限、风险资产上限和波动率约束共同驱动，组合年化波动率控制在9%以内"
+}

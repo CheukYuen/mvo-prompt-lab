@@ -1,0 +1,832 @@
+{
+  "summary": {
+    "total_cases": 105,
+    "pass_rate": 0.0,
+    "status_breakdown": {
+      "constraint_mismatch": 105,
+      "success": 0
+    }
+  },
+  "deviation_statistics": {},
+  "breakdown": {
+    "by_life_stage": {
+      "刚毕业": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "单身青年": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "二人世界": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "小孩学前": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "小孩成年前": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "子女成年": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "退休": {
+        "total": 15,
+        "pass": 0,
+        "avg_diff": null
+      }
+    },
+    "by_risk_level": {
+      "C1": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "C2": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "C3": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "C4": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "C5": {
+        "total": 21,
+        "pass": 0,
+        "avg_diff": null
+      }
+    },
+    "by_need": {
+      "保值": {
+        "total": 35,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "增值": {
+        "total": 35,
+        "pass": 0,
+        "avg_diff": null
+      },
+      "传承": {
+        "total": 35,
+        "pass": 0,
+        "avg_diff": null
+      }
+    }
+  },
+  "failed_cases": [
+    {
+      "row": 0,
+      "params": "刚毕业/C1/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.016000/cash=3/risk=10 vs Computed sigma=0.090000/cash=10/risk=29"
+    },
+    {
+      "row": 1,
+      "params": "刚毕业/C1/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.016000/cash=3/risk=13 vs Computed sigma=0.090000/cash=10/risk=42"
+    },
+    {
+      "row": 2,
+      "params": "刚毕业/C1/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.016000/cash=3/risk=11 vs Computed sigma=0.090000/cash=10/risk=35"
+    },
+    {
+      "row": 3,
+      "params": "单身青年/C1/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.015000/cash=4/risk=9 vs Computed sigma=0.100000/cash=5/risk=33"
+    },
+    {
+      "row": 4,
+      "params": "单身青年/C1/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.015000/cash=4/risk=12 vs Computed sigma=0.100000/cash=5/risk=48"
+    },
+    {
+      "row": 5,
+      "params": "单身青年/C1/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.015000/cash=4/risk=11 vs Computed sigma=0.100000/cash=5/risk=40"
+    },
+    {
+      "row": 6,
+      "params": "二人世界/C1/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.014000/cash=7/risk=8 vs Computed sigma=0.090000/cash=10/risk=29"
+    },
+    {
+      "row": 7,
+      "params": "二人世界/C1/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.014000/cash=7/risk=11 vs Computed sigma=0.090000/cash=10/risk=42"
+    },
+    {
+      "row": 8,
+      "params": "二人世界/C1/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.014000/cash=7/risk=10 vs Computed sigma=0.090000/cash=10/risk=35"
+    },
+    {
+      "row": 9,
+      "params": "小孩学前/C1/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.014000/cash=10/risk=7 vs Computed sigma=0.075000/cash=15/risk=25"
+    },
+    {
+      "row": 10,
+      "params": "小孩学前/C1/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.014000/cash=10/risk=10 vs Computed sigma=0.075000/cash=15/risk=36"
+    },
+    {
+      "row": 11,
+      "params": "小孩学前/C1/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.014000/cash=10/risk=9 vs Computed sigma=0.075000/cash=15/risk=30"
+    },
+    {
+      "row": 12,
+      "params": "小孩成年前/C1/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.014000/cash=8/risk=6 vs Computed sigma=0.060000/cash=15/risk=21"
+    },
+    {
+      "row": 13,
+      "params": "小孩成年前/C1/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.014000/cash=8/risk=8 vs Computed sigma=0.060000/cash=15/risk=30"
+    },
+    {
+      "row": 14,
+      "params": "小孩成年前/C1/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.014000/cash=8/risk=7 vs Computed sigma=0.060000/cash=15/risk=25"
+    },
+    {
+      "row": 15,
+      "params": "子女成年/C1/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.012000/cash=6/risk=5 vs Computed sigma=0.075000/cash=10/risk=25"
+    },
+    {
+      "row": 16,
+      "params": "子女成年/C1/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.012000/cash=6/risk=7 vs Computed sigma=0.075000/cash=10/risk=36"
+    },
+    {
+      "row": 17,
+      "params": "子女成年/C1/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.012000/cash=6/risk=6 vs Computed sigma=0.075000/cash=10/risk=30"
+    },
+    {
+      "row": 18,
+      "params": "退休/C1/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.010000/cash=12/risk=3 vs Computed sigma=0.040000/cash=20/risk=12"
+    },
+    {
+      "row": 19,
+      "params": "退休/C1/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.010000/cash=12/risk=4 vs Computed sigma=0.040000/cash=20/risk=18"
+    },
+    {
+      "row": 20,
+      "params": "退休/C1/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.010000/cash=12/risk=4 vs Computed sigma=0.040000/cash=20/risk=15"
+    },
+    {
+      "row": 21,
+      "params": "刚毕业/C2/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.024000/cash=3/risk=13 vs Computed sigma=0.135000/cash=10/risk=39"
+    },
+    {
+      "row": 22,
+      "params": "刚毕业/C2/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.024000/cash=3/risk=17 vs Computed sigma=0.135000/cash=10/risk=56"
+    },
+    {
+      "row": 23,
+      "params": "刚毕业/C2/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.024000/cash=3/risk=15 vs Computed sigma=0.135000/cash=10/risk=47"
+    },
+    {
+      "row": 24,
+      "params": "单身青年/C2/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.022500/cash=4/risk=12 vs Computed sigma=0.150000/cash=5/risk=44"
+    },
+    {
+      "row": 25,
+      "params": "单身青年/C2/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.022500/cash=4/risk=16 vs Computed sigma=0.150000/cash=5/risk=64"
+    },
+    {
+      "row": 26,
+      "params": "单身青年/C2/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.022500/cash=4/risk=14 vs Computed sigma=0.150000/cash=5/risk=54"
+    },
+    {
+      "row": 27,
+      "params": "二人世界/C2/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.021000/cash=7/risk=11 vs Computed sigma=0.135000/cash=10/risk=39"
+    },
+    {
+      "row": 28,
+      "params": "二人世界/C2/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.021000/cash=7/risk=15 vs Computed sigma=0.135000/cash=10/risk=56"
+    },
+    {
+      "row": 29,
+      "params": "二人世界/C2/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.021000/cash=7/risk=14 vs Computed sigma=0.135000/cash=10/risk=47"
+    },
+    {
+      "row": 30,
+      "params": "小孩学前/C2/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.021000/cash=10/risk=10 vs Computed sigma=0.112500/cash=15/risk=33"
+    },
+    {
+      "row": 31,
+      "params": "小孩学前/C2/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.021000/cash=10/risk=13 vs Computed sigma=0.112500/cash=15/risk=48"
+    },
+    {
+      "row": 32,
+      "params": "小孩学前/C2/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.021000/cash=10/risk=12 vs Computed sigma=0.112500/cash=15/risk=40"
+    },
+    {
+      "row": 33,
+      "params": "小孩成年前/C2/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.021000/cash=8/risk=8 vs Computed sigma=0.090000/cash=15/risk=28"
+    },
+    {
+      "row": 34,
+      "params": "小孩成年前/C2/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.021000/cash=8/risk=11 vs Computed sigma=0.090000/cash=15/risk=40"
+    },
+    {
+      "row": 35,
+      "params": "小孩成年前/C2/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.021000/cash=8/risk=10 vs Computed sigma=0.090000/cash=15/risk=34"
+    },
+    {
+      "row": 36,
+      "params": "子女成年/C2/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.018000/cash=6/risk=7 vs Computed sigma=0.112500/cash=10/risk=33"
+    },
+    {
+      "row": 37,
+      "params": "子女成年/C2/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.018000/cash=6/risk=9 vs Computed sigma=0.112500/cash=10/risk=48"
+    },
+    {
+      "row": 38,
+      "params": "子女成年/C2/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.018000/cash=6/risk=8 vs Computed sigma=0.112500/cash=10/risk=40"
+    },
+    {
+      "row": 39,
+      "params": "退休/C2/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.015000/cash=12/risk=4 vs Computed sigma=0.060000/cash=20/risk=16"
+    },
+    {
+      "row": 40,
+      "params": "退休/C2/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.015000/cash=12/risk=6 vs Computed sigma=0.060000/cash=20/risk=24"
+    },
+    {
+      "row": 41,
+      "params": "退休/C2/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.015000/cash=12/risk=5 vs Computed sigma=0.060000/cash=20/risk=20"
+    },
+    {
+      "row": 42,
+      "params": "刚毕业/C3/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.128000/cash=3/risk=54 vs Computed sigma=0.180000/cash=10/risk=49"
+    },
+    {
+      "row": 43,
+      "params": "刚毕业/C3/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.128000/cash=3/risk=72 vs Computed sigma=0.180000/cash=10/risk=70"
+    },
+    {
+      "row": 44,
+      "params": "刚毕业/C3/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.128000/cash=3/risk=65 vs Computed sigma=0.180000/cash=10/risk=59"
+    },
+    {
+      "row": 45,
+      "params": "单身青年/C3/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.120000/cash=4/risk=51 vs Computed sigma=0.200000/cash=5/risk=56"
+    },
+    {
+      "row": 46,
+      "params": "单身青年/C3/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.120000/cash=4/risk=68 vs Computed sigma=0.200000/cash=5/risk=80"
+    },
+    {
+      "row": 47,
+      "params": "单身青年/C3/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.120000/cash=4/risk=61 vs Computed sigma=0.200000/cash=5/risk=68"
+    },
+    {
+      "row": 48,
+      "params": "二人世界/C3/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.112000/cash=7/risk=48 vs Computed sigma=0.180000/cash=10/risk=49"
+    },
+    {
+      "row": 49,
+      "params": "二人世界/C3/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.112000/cash=7/risk=64 vs Computed sigma=0.180000/cash=10/risk=70"
+    },
+    {
+      "row": 50,
+      "params": "二人世界/C3/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.112000/cash=7/risk=57 vs Computed sigma=0.180000/cash=10/risk=59"
+    },
+    {
+      "row": 51,
+      "params": "小孩学前/C3/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.112000/cash=10/risk=41 vs Computed sigma=0.150000/cash=15/risk=42"
+    },
+    {
+      "row": 52,
+      "params": "小孩学前/C3/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.112000/cash=10/risk=55 vs Computed sigma=0.150000/cash=15/risk=60"
+    },
+    {
+      "row": 53,
+      "params": "小孩学前/C3/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.112000/cash=10/risk=50 vs Computed sigma=0.150000/cash=15/risk=51"
+    },
+    {
+      "row": 54,
+      "params": "小孩成年前/C3/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.112000/cash=8/risk=35 vs Computed sigma=0.120000/cash=15/risk=35"
+    },
+    {
+      "row": 55,
+      "params": "小孩成年前/C3/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.112000/cash=8/risk=47 vs Computed sigma=0.120000/cash=15/risk=50"
+    },
+    {
+      "row": 56,
+      "params": "小孩成年前/C3/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.112000/cash=8/risk=42 vs Computed sigma=0.120000/cash=15/risk=42"
+    },
+    {
+      "row": 57,
+      "params": "子女成年/C3/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.096000/cash=6/risk=29 vs Computed sigma=0.150000/cash=10/risk=42"
+    },
+    {
+      "row": 58,
+      "params": "子女成年/C3/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.096000/cash=6/risk=38 vs Computed sigma=0.150000/cash=10/risk=60"
+    },
+    {
+      "row": 59,
+      "params": "子女成年/C3/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.096000/cash=6/risk=34 vs Computed sigma=0.150000/cash=10/risk=51"
+    },
+    {
+      "row": 60,
+      "params": "退休/C3/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.080000/cash=12/risk=19 vs Computed sigma=0.080000/cash=20/risk=21"
+    },
+    {
+      "row": 61,
+      "params": "退休/C3/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.080000/cash=12/risk=26 vs Computed sigma=0.080000/cash=20/risk=30"
+    },
+    {
+      "row": 62,
+      "params": "退休/C3/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.080000/cash=12/risk=23 vs Computed sigma=0.080000/cash=20/risk=25"
+    },
+    {
+      "row": 63,
+      "params": "刚毕业/C4/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.160000/cash=3/risk=64 vs Computed sigma=0.225000/cash=10/risk=58"
+    },
+    {
+      "row": 64,
+      "params": "刚毕业/C4/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.160000/cash=3/risk=85 vs Computed sigma=0.225000/cash=10/risk=84"
+    },
+    {
+      "row": 65,
+      "params": "刚毕业/C4/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.160000/cash=3/risk=76 vs Computed sigma=0.225000/cash=10/risk=71"
+    },
+    {
+      "row": 66,
+      "params": "单身青年/C4/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.150000/cash=4/risk=60 vs Computed sigma=0.250000/cash=5/risk=67"
+    },
+    {
+      "row": 67,
+      "params": "单身青年/C4/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.150000/cash=4/risk=80 vs Computed sigma=0.250000/cash=5/risk=95"
+    },
+    {
+      "row": 68,
+      "params": "单身青年/C4/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.150000/cash=4/risk=72 vs Computed sigma=0.250000/cash=5/risk=81"
+    },
+    {
+      "row": 69,
+      "params": "二人世界/C4/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=7/risk=56 vs Computed sigma=0.225000/cash=10/risk=58"
+    },
+    {
+      "row": 70,
+      "params": "二人世界/C4/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=7/risk=75 vs Computed sigma=0.225000/cash=10/risk=84"
+    },
+    {
+      "row": 71,
+      "params": "二人世界/C4/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=7/risk=68 vs Computed sigma=0.225000/cash=10/risk=71"
+    },
+    {
+      "row": 72,
+      "params": "小孩学前/C4/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=10/risk=49 vs Computed sigma=0.187500/cash=15/risk=50"
+    },
+    {
+      "row": 73,
+      "params": "小孩学前/C4/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=10/risk=65 vs Computed sigma=0.187500/cash=15/risk=72"
+    },
+    {
+      "row": 74,
+      "params": "小孩学前/C4/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=10/risk=58 vs Computed sigma=0.187500/cash=15/risk=61"
+    },
+    {
+      "row": 75,
+      "params": "小孩成年前/C4/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=8/risk=41 vs Computed sigma=0.150000/cash=15/risk=42"
+    },
+    {
+      "row": 76,
+      "params": "小孩成年前/C4/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=8/risk=55 vs Computed sigma=0.150000/cash=15/risk=60"
+    },
+    {
+      "row": 77,
+      "params": "小孩成年前/C4/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=8/risk=50 vs Computed sigma=0.150000/cash=15/risk=51"
+    },
+    {
+      "row": 78,
+      "params": "子女成年/C4/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.120000/cash=6/risk=34 vs Computed sigma=0.187500/cash=10/risk=50"
+    },
+    {
+      "row": 79,
+      "params": "子女成年/C4/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.120000/cash=6/risk=45 vs Computed sigma=0.187500/cash=10/risk=72"
+    },
+    {
+      "row": 80,
+      "params": "子女成年/C4/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.120000/cash=6/risk=40 vs Computed sigma=0.187500/cash=10/risk=61"
+    },
+    {
+      "row": 81,
+      "params": "退休/C4/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.100000/cash=12/risk=22 vs Computed sigma=0.100000/cash=20/risk=25"
+    },
+    {
+      "row": 82,
+      "params": "退休/C4/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.100000/cash=12/risk=30 vs Computed sigma=0.100000/cash=20/risk=36"
+    },
+    {
+      "row": 83,
+      "params": "退休/C4/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.100000/cash=12/risk=27 vs Computed sigma=0.100000/cash=20/risk=30"
+    },
+    {
+      "row": 84,
+      "params": "刚毕业/C5/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.160000/cash=3/risk=70 vs Computed sigma=0.270000/cash=10/risk=68"
+    },
+    {
+      "row": 85,
+      "params": "刚毕业/C5/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.160000/cash=3/risk=94 vs Computed sigma=0.270000/cash=10/risk=95"
+    },
+    {
+      "row": 86,
+      "params": "刚毕业/C5/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.160000/cash=3/risk=84 vs Computed sigma=0.270000/cash=10/risk=83"
+    },
+    {
+      "row": 87,
+      "params": "单身青年/C5/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.150000/cash=4/risk=66 vs Computed sigma=0.300000/cash=5/risk=78"
+    },
+    {
+      "row": 88,
+      "params": "单身青年/C5/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.150000/cash=4/risk=88 vs Computed sigma=0.300000/cash=5/risk=95"
+    },
+    {
+      "row": 89,
+      "params": "单身青年/C5/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.150000/cash=4/risk=79 vs Computed sigma=0.300000/cash=5/risk=95"
+    },
+    {
+      "row": 90,
+      "params": "二人世界/C5/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=7/risk=62 vs Computed sigma=0.270000/cash=10/risk=68"
+    },
+    {
+      "row": 91,
+      "params": "二人世界/C5/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=7/risk=82 vs Computed sigma=0.270000/cash=10/risk=95"
+    },
+    {
+      "row": 92,
+      "params": "二人世界/C5/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=7/risk=74 vs Computed sigma=0.270000/cash=10/risk=83"
+    },
+    {
+      "row": 93,
+      "params": "小孩学前/C5/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=10/risk=54 vs Computed sigma=0.225000/cash=15/risk=58"
+    },
+    {
+      "row": 94,
+      "params": "小孩学前/C5/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=10/risk=72 vs Computed sigma=0.225000/cash=15/risk=84"
+    },
+    {
+      "row": 95,
+      "params": "小孩学前/C5/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=10/risk=64 vs Computed sigma=0.225000/cash=15/risk=71"
+    },
+    {
+      "row": 96,
+      "params": "小孩成年前/C5/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=8/risk=45 vs Computed sigma=0.180000/cash=15/risk=49"
+    },
+    {
+      "row": 97,
+      "params": "小孩成年前/C5/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=8/risk=60 vs Computed sigma=0.180000/cash=15/risk=70"
+    },
+    {
+      "row": 98,
+      "params": "小孩成年前/C5/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.140000/cash=8/risk=54 vs Computed sigma=0.180000/cash=15/risk=59"
+    },
+    {
+      "row": 99,
+      "params": "子女成年/C5/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.120000/cash=6/risk=37 vs Computed sigma=0.225000/cash=10/risk=58"
+    },
+    {
+      "row": 100,
+      "params": "子女成年/C5/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.120000/cash=6/risk=50 vs Computed sigma=0.225000/cash=10/risk=84"
+    },
+    {
+      "row": 101,
+      "params": "子女成年/C5/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.120000/cash=6/risk=45 vs Computed sigma=0.225000/cash=10/risk=71"
+    },
+    {
+      "row": 102,
+      "params": "退休/C5/保值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.100000/cash=12/risk=25 vs Computed sigma=0.120000/cash=20/risk=29"
+    },
+    {
+      "row": 103,
+      "params": "退休/C5/增值",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.100000/cash=12/risk=33 vs Computed sigma=0.120000/cash=20/risk=42"
+    },
+    {
+      "row": 104,
+      "params": "退休/C5/传承",
+      "status": "constraint_mismatch",
+      "errors": [],
+      "error_message": "Constraint mismatch: CSV sigma=0.100000/cash=12/risk=30 vs Computed sigma=0.120000/cash=20/risk=35"
+    }
+  ],
+  "timestamp": "2026-02-02T10:07:10.718898"
+}

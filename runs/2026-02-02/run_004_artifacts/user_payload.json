@@ -1,0 +1,13 @@
+{
+  "params": {
+    "life_stage": "二人世界",
+    "risk_level": "C2",
+    "need": "保值"
+  },
+  "constraints": {
+    "cash_min": 10,
+    "sigma_cap": 0.135,
+    "risk_asset_max": 39
+  },
+  "message": "请生成资产配置权重。"
+}

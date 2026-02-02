@@ -243,6 +243,46 @@ def main():
         "--dry_run", action="store_true", help="Show prompt without calling API"
     )
 
+    # Batch command
+    batch_parser = subparsers.add_parser("batch", help="Run batch validation from CSV")
+    batch_parser.add_argument(
+        "--input", "-i",
+        type=str,
+        required=True,
+        help="Input CSV file with test cases"
+    )
+    batch_parser.add_argument(
+        "--output", "-o",
+        type=str,
+        help="Output directory for results (default: runs/batch_TIMESTAMP)"
+    )
+    batch_parser.add_argument(
+        "--prompt_version",
+        type=str,
+        help="Prompt version to use (e.g., v001)"
+    )
+    batch_parser.add_argument(
+        "--delay",
+        type=float,
+        default=1.0,
+        help="Delay between API calls in seconds (default: 1.0)"
+    )
+    batch_parser.add_argument(
+        "--dry_run",
+        action="store_true",
+        help="Validate CSV and constraints without calling API"
+    )
+    batch_parser.add_argument(
+        "--continue_from",
+        type=int,
+        help="Continue from row index (for resuming interrupted runs)"
+    )
+    batch_parser.add_argument(
+        "--use_csv_constraints",
+        action="store_true",
+        help="Use constraints from CSV instead of computing from RulesEngine"
+    )
+
     args = parser.parse_args()
 
     if args.command == "run":
@@ -254,6 +294,18 @@ def main():
             prompt_version=args.prompt_version,
             dry_run=args.dry_run,
         )
+    elif args.command == "batch":
+        from promptlab.batch import BatchRunner
+        runner = BatchRunner(
+            input_csv=args.input,
+            output_dir=args.output,
+            prompt_version=args.prompt_version,
+            delay_between_calls=args.delay,
+            dry_run=args.dry_run,
+            continue_from=args.continue_from,
+            use_csv_constraints=args.use_csv_constraints,
+        )
+        runner.run_batch()
     else:
         parser.print_help()
 

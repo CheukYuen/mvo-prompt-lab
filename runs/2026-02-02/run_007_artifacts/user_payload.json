@@ -1,0 +1,13 @@
+{
+  "params": {
+    "life_stage": "子女成年",
+    "risk_level": "C3",
+    "need": "传承"
+  },
+  "constraints": {
+    "cash_min": 10,
+    "sigma_cap": 0.15,
+    "risk_asset_max": 51
+  },
+  "message": "请生成资产配置权重。"
+}

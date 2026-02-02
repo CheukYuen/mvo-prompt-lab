@@ -1,0 +1,16 @@
+{
+  "life_stage": "刚毕业",
+  "risk_level": "C2",
+  "need": "增值",
+  "weights": {
+    "w_cash": 10,
+    "w_bond": 34,
+    "w_equity": 50,
+    "w_commodity": 6
+  },
+  "self_check": {
+    "sum_100": true,
+    "bounds_ok": true
+  },
+  "notes": "权重由现金下限、风险资产上限和波动率约束共同驱动，组合年化波动率约为0.134，接近但不超过13.50%。"
+}

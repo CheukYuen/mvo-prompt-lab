@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "weights": {
+    "w_cash": 15,
+    "w_bond": 35,
+    "w_equity": 40,
+    "w_commodity": 10
+  },
+  "errors": [],
+  "warnings": [
+    "Cash weight at exact minimum",
+    "Risk assets at exact maximum"
+  ],
+  "computed_vol": 0.10382853653981647,
+  "computed_var": 0.010780365000000004,
+  "constraints_satisfied": {
+    "sum_100": true,
+    "cash_min": true,
+    "risk_asset_max": true,
+    "sigma_cap": true
+  }
+}

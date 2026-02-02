@@ -1,0 +1,13 @@
+{
+  "params": {
+    "life_stage": "子女成年",
+    "risk_level": "C2",
+    "need": "保值"
+  },
+  "constraints": {
+    "cash_min": 10,
+    "sigma_cap": 0.11249999999999999,
+    "risk_asset_max": 33
+  },
+  "message": "请生成资产配置权重。"
+}
