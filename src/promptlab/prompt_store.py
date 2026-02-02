@@ -58,6 +58,17 @@ class PromptStore:
         rendered = re.sub(r"\{\{\s*(\w+)\s*\}\}", replace_var, template)
         return rendered
 
+    # 各资产年化期望收益率
+    MU_ANN = {
+        "CASH": 0.0244,
+        "BOND": 0.04,
+        "EQUITY": 0.1302,
+        "COMMODITY": 0.0779,
+    }
+
+    # 无风险利率
+    RF = 0.014
+
     def get_market_data(self) -> dict:
         """Load and format market data for prompt context."""
         market_path = (
@@ -74,6 +85,18 @@ class PromptStore:
             "asset_order": ", ".join(market["asset_order"]),
             "sigma_ann_matrix": self._format_matrix(market["sigma_ann"]),
             "corr_matrix": self._format_matrix(market["corr"], precision=4),
+            # 新增：各资产期望收益率
+            "mu_cash": self.MU_ANN["CASH"],
+            "mu_bond": self.MU_ANN["BOND"],
+            "mu_equity": self.MU_ANN["EQUITY"],
+            "mu_commodity": self.MU_ANN["COMMODITY"],
+            # 新增：各资产单独波动率（从协方差矩阵对角线导出）
+            "vol_cash": market["ann_vol_individual"]["CASH"],
+            "vol_bond": market["ann_vol_individual"]["BOND"],
+            "vol_equity": market["ann_vol_individual"]["EQUITY"],
+            "vol_commodity": market["ann_vol_individual"]["COMMODITY"],
+            # 新增：无风险利率
+            "rf": self.RF,
         }
 
     def _format_matrix(self, matrix: list, precision: int = 6) -> str:

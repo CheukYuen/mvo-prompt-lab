@@ -62,6 +62,9 @@ class BatchTestCase:
     # Expected metrics
     expected_ann_vol: float
     expected_return: float
+    expected_sharpe: Optional[float] = None
+    # Floor used from CSV
+    floor_used: Optional[float] = None
 
 
 @dataclass
@@ -79,6 +82,9 @@ class BatchTestResult:
     validation_success: bool = False
     validation_errors: List[str] = field(default_factory=list)
     computed_vol: Optional[float] = None
+    # New: computed metrics
+    computed_exp_return: Optional[float] = None
+    computed_sharpe: Optional[float] = None
     # Comparison with expected
     deviation: Optional[WeightDeviation] = None
     # Timing
@@ -152,6 +158,14 @@ class BatchRunner:
                 else:
                     csv_risk_asset_max = int(csv_risk_asset_max)
 
+                # Parse floor_used (may be empty)
+                floor_used_str = row.get("floor_used", "").strip()
+                floor_used = float(floor_used_str) if floor_used_str else None
+
+                # Parse sharpe (may be empty)
+                sharpe_str = row.get("sharpe_excess_rf", "").strip()
+                expected_sharpe = float(sharpe_str) if sharpe_str else None
+
                 test_case = BatchTestCase(
                     row_index=idx,
                     life_stage=row["life_stage"],
@@ -168,6 +182,8 @@ class BatchRunner:
                     ),
                     expected_ann_vol=float(row["ann_vol"]),
                     expected_return=float(row["exp_return"]),
+                    expected_sharpe=expected_sharpe,
+                    floor_used=floor_used,
                 )
                 test_cases.append(test_case)
 
@@ -194,6 +210,19 @@ class BatchRunner:
         is_consistent = sigma_match and cash_match and risk_match
 
         return is_consistent, computed
+
+    def _generate_return_floor_desc(self, need: str, floor_used: Optional[float]) -> str:
+        """Generate return floor description for prompt context."""
+        if need == "保值":
+            return "无收益下限要求，以安全稳健为首要目标"
+        elif floor_used is not None:
+            return f"年化收益率不低于 {floor_used*100:.0f}%"
+        elif need == "传承":
+            return "年化收益率不低于 5%（可降级）"
+        elif need == "增值":
+            return "年化收益率不低于 7%（可降级）"
+        else:
+            return "无明确收益目标"
 
     def compare_weights(
         self, llm_weights: Dict, expected: ExpectedWeights
@@ -255,6 +284,12 @@ class BatchRunner:
 
         # Step 2: Build prompt
         market_data = self.store.get_market_data()
+
+        # Generate return_floor_desc based on need and floor_used
+        return_floor_desc = self._generate_return_floor_desc(
+            test_case.need, test_case.floor_used
+        )
+
         context = {
             "life_stage": test_case.life_stage,
             "risk_level": test_case.risk_level,
@@ -262,6 +297,7 @@ class BatchRunner:
             **constraints,
             **market_data,
             "sigma_cap_pct": f"{constraints['sigma_cap']*100:.2f}",
+            "return_floor_desc": return_floor_desc,
         }
 
         system_prompt = self.store.render(
@@ -301,6 +337,8 @@ class BatchRunner:
         result.validation_success = validation["success"]
         result.validation_errors = validation["errors"]
         result.computed_vol = validation["computed_vol"]
+        result.computed_exp_return = validation["computed_exp_return"]
+        result.computed_sharpe = validation["computed_sharpe"]
         result.llm_weights = validation["weights"]
 
         if not validation["success"]:
@@ -344,7 +382,9 @@ class BatchRunner:
                 "llm_w_cash", "llm_w_bond", "llm_w_equity", "llm_w_commodity",
                 "exp_w_cash", "exp_w_bond", "exp_w_equity", "exp_w_commodity",
                 "diff_cash", "diff_bond", "diff_equity", "diff_commodity",
-                "total_diff", "llm_vol", "exp_vol", "api_latency_ms", "errors"
+                "total_diff", "llm_vol", "exp_vol",
+                "llm_exp_return", "exp_return", "llm_sharpe", "exp_sharpe",
+                "api_latency_ms", "errors"
             ])
 
         self.results = []
@@ -441,6 +481,10 @@ class BatchRunner:
         row.extend([
             result.computed_vol if result.computed_vol else "",
             tc.expected_ann_vol,
+            result.computed_exp_return if result.computed_exp_return else "",
+            tc.expected_return,
+            result.computed_sharpe if result.computed_sharpe else "",
+            tc.expected_sharpe if tc.expected_sharpe else "",
             result.api_latency_ms if result.api_latency_ms else "",
             "; ".join(result.validation_errors) if result.validation_errors else result.error_message or "",
         ])
@@ -476,6 +520,10 @@ class BatchRunner:
             } if result.deviation else None,
             "computed_vol": result.computed_vol,
             "expected_vol": tc.expected_ann_vol,
+            "computed_exp_return": result.computed_exp_return,
+            "expected_return": tc.expected_return,
+            "computed_sharpe": result.computed_sharpe,
+            "expected_sharpe": tc.expected_sharpe,
             "api_latency_ms": result.api_latency_ms,
             "errors": result.validation_errors,
             "error_message": result.error_message,

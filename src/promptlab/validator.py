@@ -14,6 +14,8 @@ class ValidationResult(TypedDict):
     warnings: List[str]
     computed_vol: Optional[float]
     computed_var: Optional[float]
+    computed_exp_return: Optional[float]
+    computed_sharpe: Optional[float]
     constraints_satisfied: dict
 
 
@@ -23,6 +25,12 @@ class Validator:
     ASSET_ORDER = ["CASH", "BOND", "EQUITY", "COMMODITY"]
     WEIGHT_KEYS = ["w_cash", "w_bond", "w_equity", "w_commodity"]
     VOL_TOLERANCE = 1e-6
+
+    # 各资产年化期望收益率
+    MU_ANN = np.array([0.0244, 0.04, 0.1302, 0.0779])  # CASH, BOND, EQUITY, COMMODITY
+
+    # 无风险利率
+    RF = 0.014
 
     def validate(
         self, response: str, constraints: dict, market_pack: dict
@@ -51,6 +59,8 @@ class Validator:
         weights = None
         computed_vol = None
         computed_var = None
+        computed_exp_return = None
+        computed_sharpe = None
         checks = {}
 
         # 1. Parse JSON
@@ -66,6 +76,8 @@ class Validator:
                 warnings=warnings,
                 computed_vol=None,
                 computed_var=None,
+                computed_exp_return=None,
+                computed_sharpe=None,
                 constraints_satisfied={},
             )
 
@@ -88,6 +100,8 @@ class Validator:
                 warnings=warnings,
                 computed_vol=None,
                 computed_var=None,
+                computed_exp_return=None,
+                computed_sharpe=None,
                 constraints_satisfied={},
             )
 
@@ -124,6 +138,10 @@ class Validator:
                 f"Portfolio volatility {computed_vol:.6f} > cap {constraints['sigma_cap']:.6f}"
             )
 
+        # 7. Compute expected return and Sharpe ratio
+        computed_exp_return = self._compute_exp_return(weights)
+        computed_sharpe = self._compute_sharpe(computed_exp_return, computed_vol)
+
         # Warnings for edge cases
         if weights["w_cash"] == constraints["cash_min"]:
             warnings.append("Cash weight at exact minimum")
@@ -139,6 +157,8 @@ class Validator:
             warnings=warnings,
             computed_vol=computed_vol,
             computed_var=computed_var,
+            computed_exp_return=computed_exp_return,
+            computed_sharpe=computed_sharpe,
             constraints_satisfied=checks,
         )
 
@@ -199,3 +219,42 @@ class Validator:
 
         # Return standard deviation (volatility) and variance
         return float(np.sqrt(variance)), float(variance)
+
+    def _compute_exp_return(self, weights: dict) -> float:
+        """
+        Compute portfolio expected return.
+
+        Formula: exp_return = w^T @ mu
+
+        Args:
+            weights: Dict with w_cash, w_bond, w_equity, w_commodity (0-100)
+
+        Returns:
+            Expected return (annualized)
+        """
+        w = np.array(
+            [
+                weights["w_cash"] / 100.0,
+                weights["w_bond"] / 100.0,
+                weights["w_equity"] / 100.0,
+                weights["w_commodity"] / 100.0,
+            ]
+        )
+        return float(w @ self.MU_ANN)
+
+    def _compute_sharpe(self, exp_return: float, ann_vol: float) -> Optional[float]:
+        """
+        Compute Sharpe ratio.
+
+        Formula: sharpe = (exp_return - rf) / ann_vol
+
+        Args:
+            exp_return: Expected return
+            ann_vol: Annualized volatility
+
+        Returns:
+            Sharpe ratio, or None if volatility is zero
+        """
+        if ann_vol <= 0:
+            return None
+        return float((exp_return - self.RF) / ann_vol)

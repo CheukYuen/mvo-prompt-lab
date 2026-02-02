@@ -16,3 +16,19 @@ prompts:
           - sigma_ann_matrix
           - corr_matrix
           - asset_order
+      v002:
+        file: allocation_test.v002.md
+        description: "Enhanced prompt with asset characteristics and strategy hints"
+        created: "2026-02-02"
+        variables:
+          - life_stage
+          - risk_level
+          - need
+          - cash_min
+          - sigma_cap
+          - sigma_cap_pct
+          - risk_asset_max
+          - sigma_ann_matrix
+          - corr_matrix
+          - asset_order
+          - return_floor_desc
