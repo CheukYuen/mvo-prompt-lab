@@ -26,11 +26,10 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-或直接安装：
-
-```bash
-pip install numpy dashscope python-dotenv pyyaml
-```
+> **注意**：本项目使用 `src/` 目录结构，必须通过 `pip install` 安装后才能运行 `python -m promptlab`。
+>
+> - **开发环境**：使用 `pip install -e .`（editable mode），修改代码立即生效
+> - **生产环境**：使用 `pip install .`，代码复制到 `site-packages`，更稳定安全
 
 ### 3. 配置 API Key
 
@@ -66,6 +65,43 @@ python -m promptlab run --life_stage 单身青年 --risk_level C3 --need 增值
 ```bash
 python -m promptlab run --user "退休C1保值" --dry_run
 ```
+
+### 5. 批量验证
+
+```bash
+# 基本用法 - 调用大模型 API 验证 105 个配置
+python -m promptlab batch --input inputs/batch/mvo_105_weights_saa_v3.csv --use_csv_constraints
+
+# Dry Run - 仅验证 CSV 格式，不调用 API
+python -m promptlab batch --input inputs/batch/mvo_105_weights_saa_v3.csv --use_csv_constraints --dry_run
+
+# 指定输出目录和 API 调用间隔
+python -m promptlab batch --input xxx.csv --output runs/exp_001 --delay 2.0 --use_csv_constraints
+
+# 从第 50 行继续（中断恢复）
+python -m promptlab batch --input xxx.csv --use_csv_constraints --continue_from 50
+```
+
+#### 批量验证参数
+
+| 参数 | 说明 |
+|------|------|
+| `--input, -i` | 输入 CSV 文件路径 (必需) |
+| `--output, -o` | 输出目录 (默认: runs/batch_TIMESTAMP) |
+| `--use_csv_constraints` | 使用 CSV 中的约束参数 (推荐) |
+| `--dry_run` | 仅验证 CSV，不调用 API |
+| `--delay` | API 调用间隔秒数 (默认: 1.0) |
+| `--continue_from` | 从指定行继续 |
+
+#### 批量验证输出
+
+运行完成后在 `runs/batch_YYYYMMDD_HHMMSS/` 目录下生成：
+
+| 文件 | 用途 |
+|------|------|
+| `results.csv` | 每行结果，便于 Excel 分析 |
+| `summary.json` | 汇总统计 (通过率、偏差分布) |
+| `batch.jsonl` | 完整日志 (含原始响应) |
 
 ## 参数说明
 

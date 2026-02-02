@@ -52,12 +52,27 @@ risk_asset_max = clip(RISK_ASSET_MAX_STAGE[life_stage] * K_RISK[risk_level] * K_
 4. (w_equity + w_commodity) <= risk_asset_max
 5. ann_vol = sqrt(w^T Σ w) <= sigma_cap
 
+## 环境设置
+
+```bash
+# 创建并激活虚拟环境
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 安装依赖（开发模式）
+pip install -e .
+```
+
+> **重要**：本项目使用 `src/` 目录结构（PEP 517/660 标准），必须通过 `pip install` 安装后才能运行。
+>
+> | 环境 | 命令 | 说明 |
+> |------|------|------|
+> | 开发 | `pip install -e .` | editable mode，修改代码立即生效 |
+> | 生产 | `pip install .` | 代码复制到 `site-packages`，稳定安全 |
+
 ## 常用命令
 
 ```bash
-# 激活虚拟环境
-source .venv/bin/activate
-
 # 运行（自然语言）
 python -m promptlab run --user "给我单身青年C3增值的配置"
 
